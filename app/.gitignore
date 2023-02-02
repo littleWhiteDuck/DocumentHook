@@ -1,0 +1,7 @@
+/build
+proguard-keys.txt
+proguard-rules.pro
+mapping.txt
+/test
+/src/test/
+/src/androidTest/
