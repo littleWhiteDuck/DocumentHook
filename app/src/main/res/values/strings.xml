@@ -4,4 +4,5 @@
         <item>com.android.documentsui</item>
         <item>com.google.android.documentsui</item>
     </string-array>
+    <string name="introduce">自动调用授权data等目录，无需手动点击\nAutomatically call authorization [Android/data] and other directories, no need to manually click</string>
 </resources>

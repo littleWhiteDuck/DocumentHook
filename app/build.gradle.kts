@@ -18,8 +18,8 @@ android {
         applicationId = "me.documenthook"
         minSdk = 33
         targetSdk = 33
-        versionCode = 1
-        versionName = "1.0"
+        versionCode = 3
+        versionName = "1.2"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -60,6 +60,15 @@ android {
     )
 
     dependenciesInfo.includeInApk = false
+    flavorDimensions += listOf("default")
+    productFlavors {
+        create("SimpleHook") {
+            dimension = "default"
+        }
+        create("Normal") {
+            dimension = "default"
+        }
+    }
 
 }
 
