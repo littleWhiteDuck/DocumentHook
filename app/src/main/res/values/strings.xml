@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Auto-auth</string>
+    <string name="app_name">Auto-one</string>
     <string-array name="xposed_scope">
         <item>com.android.documentsui</item>
         <item>com.google.android.documentsui</item>

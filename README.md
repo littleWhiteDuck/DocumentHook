@@ -20,21 +20,23 @@
 
 - 软件意义：适用于未申请root权限，但需要大量申请【Android/data】目录授权
 
-- 另外，如果你是SimpleHook用户，可以下载SimpleHook专用版，可以一次授权所有应用！！！
+- 软件分为**两个版本**
 
-  > ```kotlin
-  > // 通过分析发现，当有多个Uri授权时，使用ClipData传递数据。通过Hook伪造了uri数组。
-  > val clipData = intent.clipData ?: return@run
-  > for (i in 0 until clipData.itemCount) {
-  >     val uri = clipData.getItemAt(i).uri
-  >     val takeFlags: Int =
-  >         Intent.FLAG_GRANT_READ_URI_PERMISSION or Intent.FLAG_GRANT_WRITE_URI_PERMISSION
-  >     contentResolver.takePersistableUriPermission(uri, takeFlags)
-  > }
-  > ```
+  - **Auth-one**
 
+    > 此版本是申请一个授权一个，取决于目标应用（如【MT管理器】）的申请，作用域**仅给【文件】app即可**
+
+  - **Auth-all**
+
+    > 此版本通过Hook目标应用（如【MT管理器】app），可以一次性授权所有应用（存在个别的应用无法授权）
+    >
+    > 已经在【MT管理器】app、【雪豹速清】app 测试通过
+    >
+    > 此版本LSPosed作用域为**目标应用**（如【MT管理器】app），和**【文件】app**
 
 # DocumentHook
+
+- **machine translation**
 
 - Through Hook, when there is an APP application to access the [Android/data] directory, the code authorization will be automatically invoked, saving **two steps**
 
@@ -56,15 +58,17 @@
 
 - The meaning of the app: Applicable to users who have not applied for root permissions, but need to apply for [Android/data] directory authorization in large quantities
 
-- In addition, if you are a **SimpleHook** user, you can download **the special version of SimpleHook**, and you can authorize all applications at once! ! !
+- The software is divided into **two versions**
 
-  > ```kotlin
-   > // Through analysis, it is found that when there are multiple Uri authorizations, use ClipData to transfer data. The uri array is forged through Hook.
-   > val clipData = intent.clipData?: return@run
-   > for (i in 0 until clipData. itemCount) {
-   > val uri = clipData.getItemAt(i).uri
-   > val takeFlags: Int =
-   > Intent.FLAG_GRANT_READ_URI_PERMISSION or Intent.FLAG_GRANT_WRITE_URI_PERMISSION
-   > contentResolver.takePersistableUriPermission(uri, takeFlags)
-   > }
-   > ```
+  - **Auth-one**
+
+    > This version is to apply for one authorization, depending on the application of the target application (such as [MT Manager]), the scope is **only for the [File] app**
+
+  - **Auth-all**
+
+    > This version can authorize all applications at one time through the Hook target application (such as [MT Manager] app) (some applications cannot be authorized)
+    >
+    > It has passed the test in [MT Manager] app and [雪豹速清] app
+    >
+    > The **scope** of this version of LSPosed is the **target application** (such as [MT Manager] app), and **[File] app**
+

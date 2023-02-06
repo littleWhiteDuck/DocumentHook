@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Auto-all</string>
+    <string-array name="xposed_scope">
+        <item>com.android.documentsui</item>
+        <item>com.google.android.documentsui</item>
+    </string-array>
+    <string name="introduce">一次性授权所有应用\nAuthorize all apps at once</string>
+</resources>
